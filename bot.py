@@ -25,7 +25,7 @@ from pyrogram.raw.all import layer
 from pyrogram import Client, __version__
 
 
-if bool(os.environ.get("WEBHOOK")):
+if bool(os.environ.get("WEBHOOK", False)):
     from Uploader.config import Config
 else:
     from sample_config import Config
@@ -41,7 +41,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
 app = Client(
-    name='All-Url-Uploader',
+    name='Ayaka Url',
     api_id=Config.API_ID,
     api_hash=Config.API_HASH,
     bot_token=Config.BOT_TOKEN,
